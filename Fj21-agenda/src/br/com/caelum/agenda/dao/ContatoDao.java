@@ -34,7 +34,9 @@ public class ContatoDao {
 			stmt.setDate(4, new Date(contato.getDataNascimento().getTimeInMillis()));
 
 			stmt.execute();
+			System.out.println("Iniciando a inserção de um novo contato..........");
 			stmt.close();
+			System.out.println("inserção de um novo contato realizada com sucesso, fechado conexão..........");
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
