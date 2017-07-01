@@ -16,16 +16,20 @@
 	
 	<c:import url="cabecalho.jsp" />
 	
-	<%--Cria lista --%>
+	<%--Cria lista 
+	Não se usa código java dentro da página JSP
 	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"/>
+	
+	--%>
 	<table border="1" align="center" >
 			<th>Id</th>
 			<th>Nome</th>
 			<th>Email</th>
 			<th>Endereço</th>
 			<th>Data de Nascimento</th>
+			<th>Funções</th>
 		
-		<c:forEach var="contato" items="${dao.lista}" varStatus="id">
+		<c:forEach var="contato" items="${contatos}" varStatus="id">
 			<tr bgcolor="#${id.count % 2 == 0 ? 'aaee88' : 'ffffff' }" align="left">
 				<td>${id.count}</td>
 				<td>${contato.nome}</td>
@@ -47,6 +51,7 @@
 					pattern="dd/MM/yyyy" />
 				</td>
 				
+				<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a></td>
 			</tr>
 		</c:forEach>
 	</table>
