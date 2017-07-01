@@ -7,21 +7,54 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+ <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.min.css" />
+ <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap-theme.min.css" />
+ <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+ 
 
 <title>Lista Contatos</title>
 </head>
 <body>
 	
+	<div class="container">
 	
-	<c:import url="cabecalho.jsp" />
+		<div class="navbar navbar-fixed-top" role="navigation">
+		   <div class="container">
+		       <c:import url="cabecalho.jsp" />
+		     
+		     <div class="navbar-collapse collapse">
+		        <div class="row" style="padding-top: 10px;">
+		           <a href="adiciona-contato.jsp" class="btn btn-sm btn-success active navbar-right" role="button">Adicionar um novo contato</a>
+		         
+		        </div>
+		     </div>
+		     
+		
+		   </div>
+		
+	
 	
 	<%--Cria lista 
 	Não se usa código java dentro da página JSP
 	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"/>
 	
 	--%>
-	<table border="1" align="center" >
+	
+	
+	
+ 
+  
+ 
+
+
+	
+	<div class="panel panel-default">
+	
+		 <!-- Default panel contents -->
+	  <div class="panel-heading">Lista de Contatos</div>
+	  <div class="panel-body">
+	  
+	<table class="table" border="1">
 			<th>Id</th>
 			<th>Nome</th>
 			<th>Email</th>
@@ -58,5 +91,8 @@
 			
 
 	<c:import url="rodape.jsp"></c:import>
+	</div>
+	</div>
+	</div>
 </body>
 </html>
